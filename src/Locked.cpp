@@ -2,10 +2,11 @@
  * Locked.cpp
  *
  *  Created on: Feb 9, 2013
- *      Author: dan
+ *      Author: Lukas
  */
 
 #include "Locked.h"
+#include "Unlocked.cpp"
 
 Locked* Locked::the_instance = 0;
 
@@ -24,7 +25,10 @@ Locked::~Locked() {
 }
 
 void Locked::handleInput(StateMachine* sm, vector<bool> buttons) {
-
+  if (unlock_pressed(buttons)){
+    unlock();
+    sm->changeState(Unlocked::instance());
+  }
   //;
 }
 

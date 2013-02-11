@@ -25,6 +25,17 @@ public:
 protected:
   void changeState(StateMachine* sm, State* newState);
 
+  void unlock();
+  void lock();
+  void play();
+  void start_blast();
+  void stop_blast();
+
+  bool unlock_pressed(vector<bool>&);
+  bool lock_pressed(vector<bool>&);
+  bool play_stop_pressed(vector<bool>&);
+  bool blast_pressed(vector<bool>&);
+
 private:
   string name;
 };
