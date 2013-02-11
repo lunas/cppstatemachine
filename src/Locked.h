@@ -17,6 +17,8 @@ public:
 
   virtual void handleInput(StateMachine*, vector<bool>);
 
+  virtual void set_leds(StateMachine* sm);
+
 //protected:
   Locked();
   virtual ~Locked();

@@ -20,6 +20,8 @@ void State::handleInput(StateMachine* sm, std::vector<bool> buttons){
 
 }
 
+void State::set_leds(StateMachine* sm){ }
+
 void State::changeState(StateMachine* sm, State* newState) {
   sm->changeState(newState);
 }

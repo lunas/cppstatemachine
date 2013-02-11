@@ -6,6 +6,7 @@
  */
 
 #include <vector>
+#include "../../midiconv/gpiocontroller/GpioController.hpp"
 
 
 #ifndef STATEMACHINE_H_
@@ -17,17 +18,19 @@ class State;
 
 class StateMachine {
 public:
-  StateMachine();
+  StateMachine(GpioController*);
   virtual ~StateMachine();
 
-  void handleInput(vector<bool>);
+  void handleInput(vector<bool>&);
   State* currentState();
+  void set_leds(const vector<bool>&);
 
   void changeState(State*);
 
 private:
   State* state;
   vector<State*> states;
+  GpioController* gpio;
 
 };
 

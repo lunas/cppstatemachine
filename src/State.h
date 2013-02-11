@@ -20,6 +20,8 @@ public:
   virtual void handleInput(StateMachine*, std::vector<bool>);
   std::string getName();
 
+  virtual void set_leds(StateMachine* sm);
+
 protected:
   void changeState(StateMachine* sm, State* newState);
 
